@@ -32,9 +32,7 @@ Ce projet utilise plusieurs bibliothèques pour assurer la sécurité, la gestio
 
 ✅ express-validator → Validation et assainissement des données envoyées par l’utilisateur.
 
-
-
-
+____________________________________________________________________________________________________________________________________________________________________
 
 
 🖥️ Fonctionnement du serveur (serveur.js)
@@ -59,7 +57,7 @@ Ajout d'un middleware permettant la vérification du rôle admin.
 Lancement du serveur sur le port 3000.
 
 
-
+____________________________________________________________________________________________________________________________________________________________________
 
 
 🔗 Relation entre les middlewares et routes
@@ -91,7 +89,7 @@ route.post('/login', email, validationResult, userController.login);
 Ces middlewares permettent de filtrer et sécuriser les requêtes avant qu’elles n’atteignent le contrôleur qui effectue les opérations sur la base de données.
 
 
-
+____________________________________________________________________________________________________________________________________________________________________
 
 
 🔒 Sécurité & Contraintes Techniques
@@ -102,7 +100,7 @@ Ces middlewares permettent de filtrer et sécuriser les requêtes avant qu’ell
 ✔️ Sécurisation via SSL/TLS pour chiffrer les connexions. ✔️ Utilisation du port 5432, le port par défaut de PostgreSQL pour les communications avec le serveur.
 
 
-
+____________________________________________________________________________________________________________________________________________________________________
 
 
 🔧 Axes d’amélioration

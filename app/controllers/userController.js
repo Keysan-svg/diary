@@ -10,6 +10,15 @@ dotenv.config({
 
 const userController = {
 
+    async index(req, res) {
+        try {
+            const users = await User.findAll()
+            return res.status(200).json({ users })
+        } catch(err) {
+            return res.status(500).json({ err })
+        }
+    },
+
     async login(req, res) {
         const { email, password} = req.body
 
@@ -22,7 +31,7 @@ const userController = {
            
            if(isPasswordValid){
                     const token = jwt.sign({ email, role: user.role }, process.env.TOKEN_PRIVATE_KEY, {
-                        expiresIn: "1h" //a modifier mettre un algorithme de chiffrement pour la clé modification de la date d'expiration
+                        expiresIn: "1h"
                     })
 
                 return res.status(200).json({ token })
@@ -52,7 +61,7 @@ const userController = {
 
     },
 
-    async getOneByEmail() {
+    async getOneByEmail(req, res) {
         
             const { decodedToken } = req
             
@@ -79,6 +88,29 @@ const userController = {
         } catch(err) {
             return res.status(500).json({ err })
         }
+    },
+
+    async deleteOneById(req, res) {
+        const { id } = req.params
+        const { email, role } = req.decodedToken
+        try {
+            const user = await User.findByPk(Number(id))
+            const userEmail = user.email
+            if(!( email == userEmail || role == 'admin' )) {
+                return res.status(400).json({ message : ' bad request '})
+            }
+
+            if(!user) {
+                return res.status(404).json({ message : ` no user with foudn with id : ${id} `})
+            }
+
+            await user.destroy()
+            return res.status(200).json({ message : `user with id ${userEmail} has been deleted`})
+
+        } catch( err ) {
+            return res.status(500)
+        }
+
     }
 }
 

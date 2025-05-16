@@ -32,16 +32,7 @@ User.init({
 
     sequelize:sequelizeClient,
     tableName: 'Users',
+
 })
 
 module.exports = User
-
-// console.log(User == sequelizeClient.models.User)
-
-/* async function syncUserWithDb() {
-    await User.sync({
-        alter: true
-    })
-}
-
-syncUserWithDb() */

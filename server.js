@@ -19,20 +19,6 @@ app.use(express.json())
 app.use(cors()) // a modifier ajouter une origine pour communiquer
 app.use('/api/v1/user', userRoutes)
 
-//http://localhost:3000/api/v1/user
-
-
-// time rating
-
-/* function rootCallback(req, res) {
-
-    return res.status(200).json({message : "Welcome"})
-}
-
-app.get('/', rootCallback) */
-
-
-
 app.listen(3000, function(){
 
     console.log('🚀 Server running on port 3000')

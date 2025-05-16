@@ -1,16 +1,10 @@
 📌 Projet Fil Rouge: Intégration et Sécurisation d’une BDD
 📖 Contexte
-
-
-
-
 Ce projet vise à développer une application sécurisée, en mettant l’accent sur la protection des données et les bonnes pratiques en matière de cybersécurité web. 
 Un serveur d’application communiquant avec la base de données.
 Une application back-end et base de données.
 
-
-
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🔧 Technologies utilisées
 🚀 Serveur d'application (Backend)
 Node.js avec Express pour la gestion des requêtes et de la logique métier.
@@ -20,7 +14,7 @@ PostgreSQL : Base de données relationnelle robuste et performante, utilisant le
 
 
 
-
+____________________________________________________________________________________________________________________________________________________________________
 
 
 📦 Dépendances installées
